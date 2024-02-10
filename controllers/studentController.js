@@ -166,6 +166,11 @@ const data = [
  *                     type: string
  *                     description: Mensaje de error indicando que el estudiante no fue encontrado
  *                     example: "El Id 40 de Estudiante no ha sido encontrado"
+ *     put:
+ *      tags:
+ *        - Estudiantes
+ *      
+ * 
  *     patch:
  *       tags: 
  *         - Estudiantes
@@ -283,6 +288,9 @@ router.patch('/:id', (req, res) => {
 
 })
 
+router.put('/',(req,res)=>{
+    res.status(200).send({ message: 'PUT'});
+})
 
 router.post('/',(req,res)=>{
     const {id,name,age,note} = req.body;

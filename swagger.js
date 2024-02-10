@@ -5,12 +5,12 @@ const options = {
     definition: {
         openapi: '3.0.0',
         info: {
-            title: 'API Estudiantes Ibaktor',
-            description: 'Api para la gestion de estudiantes, permite los metodos GET, POST, PUT, DELETE. ',
+            title: 'API Universidad Ibaktor',
+            description: 'Api para la gestion de datos academicos, permite los metodos GET, POST, PUT, DELETE. ',
             version: '2.0.0'
         }
     },
-    apis:['./controllers/studentController.js']
+    apis:['./controllers/studentController.js','./controllers/teachersController.js']
 }
 
 const swaggerSpec = swaggerJSDoc(options);
