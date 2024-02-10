@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import swaggerDocs from './swagger.js';
 import studentController from './controllers/studentController.js';
 
 
@@ -13,4 +14,5 @@ const port = 4000;
 
 app.listen(port, () => {
   console.log("Servidor escuchando al puerto:" + port);
+  swaggerDocs(app,port);
 });
