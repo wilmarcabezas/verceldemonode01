@@ -1,22 +1,16 @@
-import express from 'express';
+import express from "express";
+import cors from "cors";
+import studentController from './controllers/studentController.js';
+
 
 const app = express();
-const port = 3000;
-const data = [
-    {id:1, name:'Claudia'},
-    {id:2, name:'Andrea'},
-    {id:3, name: 'Antonio'},
-    {id:4, name:'Baltazar'}
-]
+app.use(express.json());
+app.use(cors());
 
-app.get('/student',(req,res)=>{
-    res.send(data);
-})
+app.use('/students',studentController)
 
+const port = 4000;
 
-
-
-
-app.listen(port,()=>{
-    console.log('Servidor escuchado  en el puerto: '+port)
-})
+app.listen(port, () => {
+  console.log("Servidor escuchando al puerto:" + port);
+});
