@@ -1,7 +1,7 @@
 import pkg from 'pg';
 const {Client} = pkg;
 
-const connectionString = 'postgres://default:bf3BTmnKYd4P@ep-orange-smoke-08960365.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require';
+const connectionString = 'postgres://default:B1CGPgAHOku6@ep-rough-cell-a4wy458s.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require';
 
 const client = new Client({
     connectionString: connectionString,

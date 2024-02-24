@@ -1,6 +1,8 @@
 import express from "express";
 import('dotenv/config');
 import cors from "cors";
+import conectar from './Utils/Database.js';
+
 import controllerStudent from './controllers/controllerStudent.js';
 
 
@@ -15,14 +17,9 @@ app.get('/', (req, res) => {
 
 app.use('/students',controllerStudent);
 
-async function startServer() {
-  await import('dotenv/config'); // Asegura que dotenv se carga antes de acceder a las variables de entorno
-  
-  const port = process.env.PORT || 3000; // Proporciona un valor por defecto para el puerto
+const port = process.env.PORT || 3000; // Proporciona un valor por defecto para el puerto
 
   app.listen(port, () => {
+    conectar();
     console.log("Servidor escuchando al puerto:" + port);
   });
-}
-
-startServer().catch(console.error);
