@@ -8,6 +8,10 @@ app.use(express.json());
 app.use(cors());
 
 
+app.get('/', (req, res) => {
+  res.json('Genial')
+});
+
 async function startServer() {
   await import('dotenv/config'); // Asegura que dotenv se carga antes de acceder a las variables de entorno
   
