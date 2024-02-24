@@ -10,7 +10,7 @@ const options = {
             version: '2.0.0'
         }
     },
-    apis:['./controllers/studentController.js','./controllers/teachersController.js']
+    apis:['./controllers/controllerStudent.js','./controllers/teachersController.js']
 }
 
 const swaggerSpec = swaggerJSDoc(options);

@@ -3,10 +3,6 @@ const router = express.Router();
 
 /**
  * @swagger
- * openapi: 3.0.0
- * info:
- *   title: API de Gestión de Estudiantes
- *   version: "1.0"
  * paths:
  *   /teachers:
  *     get:
@@ -27,7 +23,11 @@ const router = express.Router();
  */
 
 router.get('/',(req,res)=>{
-    res.json({message: "Lista de Profesores"});
+    try{
+        res.json({message: "Lista de Profesorwes"});
+    }
+    catch(err){}
+    
 })
 
 router.get('/:id',(req,res)=>{

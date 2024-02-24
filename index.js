@@ -1,20 +1,21 @@
 import express from "express";
+import('dotenv/config');
 import cors from "cors";
-import swaggerDocs from './swagger.js';
-import studentController from './controllers/studentController.js';
-import teachersController from './controllers/teachersController.js';
 
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use('/students',studentController)
-app.use('/teachers',teachersController)
 
-const port = 4000;
+async function startServer() {
+  await import('dotenv/config'); // Asegura que dotenv se carga antes de acceder a las variables de entorno
+  
+  const port = process.env.PORT || 3000; // Proporciona un valor por defecto para el puerto
 
-app.listen(port, () => {
-  console.log("Servidor escuchando al puerto:" + port);
-  swaggerDocs(app,port);
-});
+  app.listen(port, () => {
+    console.log("Servidor escuchando al puerto:" + port);
+  });
+}
+
+startServer().catch(console.error);
