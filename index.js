@@ -1,6 +1,7 @@
 import express from "express";
 import('dotenv/config');
 import cors from "cors";
+import controllerStudent from "./controllers/controllerStudent';
 
 
 const app = express();
@@ -12,6 +13,7 @@ app.get('/', (req, res) => {
   res.json('Genial')
 });
 
+app.use('/students',controllerStudent);
 async function startServer() {
   await import('dotenv/config'); // Asegura que dotenv se carga antes de acceder a las variables de entorno
   
